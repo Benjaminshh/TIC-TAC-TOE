@@ -1,0 +1,52 @@
+html,body{
+    height: 100%;
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.board{
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    height: 480px;
+    font-family: Arial,sans-serif,inherit;
+   
+}
+.board div{
+    width: calc(464px / 3);
+    height: calc(464px / 3);
+}
+h1{
+    font-size: 3em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+#toolToCenter{
+    height: 199px;
+}
+
+.piece{
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* don't know a better solution for signature
+tic tac toe board */
+#one,#two,#three,
+#four,#five,#six{
+    border-bottom: 8px solid black;
+}
+#one,#two,#four,
+#five,#seven,#eight{
+    border-right: 8px solid black;
+}
+
