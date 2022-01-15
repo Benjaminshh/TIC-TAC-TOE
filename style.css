@@ -7,7 +7,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 .board{
     display: flex;
@@ -24,12 +23,15 @@ body{
 h1{
     font-size: 3em;
     margin-top: 1em;
+    margin-bottom: 1em;
+}
+.announcer{
     margin-bottom: 2em;
+    font-size: 2em;
+    min-height: 40px;
 }
 
-#toolToCenter{
-    height: 199px;
-}
+
 
 .piece{
     font-size: 100px;
