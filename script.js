@@ -11,16 +11,14 @@ const Player = (xOrO) =>{
     let indexes = ""
     const getPiece = () => xOrO;
     const updateIndexes = (index) => indexes += index; 
-    const getIndexes = () => indexes
-    const placePiece = position =>{
-        if(gameBoard.gameArray[position] == "")
-        gameBoard.gameArray[position] = xOrO;
-        displayController.update()
-    }
+    const getIndexes = () => indexes;
+    const resetIndexes = () => indexes = "";
+  
     return{
         getPiece,
         updateIndexes,
-        getIndexes
+        getIndexes,
+        resetIndexes
     }
 }
 
@@ -29,7 +27,8 @@ gameBoard = (() =>{
     const p1 = Player("X");
     const p2 = Player("O");
     let board = document.querySelector(".board");
-    let announcer = document.querySelector(".announcer")
+    let announcer = document.querySelector(".announcer");
+    
     let p1Went = false;
     
     const update = () => { 
@@ -38,6 +37,16 @@ gameBoard = (() =>{
         for(i = 0; i< gameArray.length; i++){
             containers[i].textContent = gameArray[i]
         }
+    }
+
+    const reset = () => {
+        gameArray = ["","","","","","","","",""];
+        update();
+        announcer.textContent = "";
+        p1.resetIndexes();
+        p2.resetIndexes();
+        p1Went = false;
+        board.addEventListener("mousedown", addPieces)
     }
 
     const checkWinner =  function(player){
@@ -80,7 +89,7 @@ gameBoard = (() =>{
     board.addEventListener("mousedown", addPieces)
 
     return {
-        checkWinner
+        reset
     }
 })();
 
