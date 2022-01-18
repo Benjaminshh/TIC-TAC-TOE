@@ -1,4 +1,4 @@
 # TIC-TAC-TOE
 The Odin Project  
-Project to test factory functions, closures, and IIFE  
+Project that uses factory functions, closures, and IIFEs 
 [Live Preview](https://benjaminshh.github.io/TIC-TAC-TOE/)
